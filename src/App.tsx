@@ -6,8 +6,6 @@ import { Task } from "./types/index"
 
 import './App.css';
 
-
-
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
@@ -29,7 +27,7 @@ function App() {
 
   const toggleTask = (id: number) => {
     setTasks(tasks =>
-      tasks.map((task, i) =>
+      tasks.map((task) =>
         task.id === id ? { ...task, isCompleted: !task.isCompleted } : task
       )
     );
@@ -61,7 +59,7 @@ function App() {
                 fill="none"
               />
             </svg>
-            <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} aria-label="New task" className="add-task-field" placeholder="What needs to be done?" />
+            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} aria-label="New task" className="add-task-field" placeholder="What needs to be done?" />
           </form>
 
           <TaskList tasks={filteredTasks} toggleTask={toggleTask} />
