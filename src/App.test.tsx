@@ -11,7 +11,8 @@ describe("App", () => {
     fireEvent.change(input, { target: { value: "get hired at Mindbox" } });
     fireEvent.submit(form);
 
-    expect(screen.getByText("get hired at Mindbox")).toBeInTheDocument();
+    const task = screen.getByText("get hired at Mindbox");
+    expect(task).toBeInTheDocument();
     expect(input).toHaveValue("");
   });
 
@@ -43,8 +44,8 @@ describe("App", () => {
     fireEvent.change(input, { target: { value: "get a job" } });
     fireEvent.submit(form);
 
-    const task1 = screen.getByText("apply to Mindbox");
-    fireEvent.click(task1.previousSibling as SVGElement);
+    const task = screen.getByText("apply to Mindbox");
+    fireEvent.click(task.previousSibling as SVGElement);
 
     fireEvent.click(screen.getByText("Completed"));
     expect(screen.queryByText("get a job")).not.toBeInTheDocument();
@@ -71,12 +72,13 @@ describe("App", () => {
     const task = screen.getByText("done");
     fireEvent.click(task.previousSibling as SVGElement);
 
-    fireEvent.click(screen.getByText("Clear completed"));
+    const clearButton = screen.getByText("Clear completed");
+    fireEvent.click(clearButton);
 
     expect(screen.queryByText("done")).not.toBeInTheDocument();
   });
 
-  test("счётчик items left обновляется", () => {
+  test("счётчик item(s) left обновляется", () => {
     render(<App />);
 
     const input = screen.getByPlaceholderText("What needs to be done?");
@@ -90,9 +92,10 @@ describe("App", () => {
     expect(screen.getByText("2 items left")).toBeInTheDocument();
 
     const task1 = screen.getByText("item number 1");
-    fireEvent.click(task1.previousSibling as SVGElement);
+    const marker1 = task1.previousSibling as SVGElement;
+    fireEvent.click(marker1);
 
-    expect(screen.getByText("1 items left")).toBeInTheDocument();
+    expect(screen.getByText("1 item left")).toBeInTheDocument();
   });
 
   test("toggle работает правильно с несколькими элементами на вкладке Active, нет toggle по индексу", () => {

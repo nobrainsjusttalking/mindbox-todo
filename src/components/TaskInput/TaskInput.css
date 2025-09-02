@@ -1,0 +1,28 @@
+.input-form-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #fefefe;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.dropdown-arrow {
+  margin: 20px;
+}
+
+.add-task-field {
+  display: block;
+  width: 100%;
+  font-family: "M_Ying_Hei_HK_W3";
+  box-sizing: border-box;
+  padding: 34px 25px;
+  border: none;
+  outline: none;
+  font-size: 45px;
+}
+
+.add-task-field::placeholder {
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 1.1px;
+  color: #e6e6e6;
+}
