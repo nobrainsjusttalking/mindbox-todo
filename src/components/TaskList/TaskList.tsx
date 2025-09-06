@@ -9,7 +9,7 @@ const TaskList = ({ tasks, toggleTask }: { tasks: Task[], toggleTask: (index: nu
     <ul className="task-list">
       {tasks.map((task) => {
         return (
-          <TaskItem key={`${task.text}-${task.id}`} task={task} onToggle={() => toggleTask(task.id)}></TaskItem>
+          <TaskItem key={task.id} task={task} onToggle={() => toggleTask(task.id)}></TaskItem>
         );
       })}
     </ul>
