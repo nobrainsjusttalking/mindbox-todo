@@ -21,7 +21,7 @@
 ## 🛠️ Стек технологий
 
 - ⚛️ **React** + **TypeScript**  
-- 🪝 **React Hooks** (useState, useEffect и др.)  
+- 🚀 **React Hooks** (useState, useEffect и др.)  
 - 🎨 Стилизация через CSS  
 - 🧪 Тесты с помощью **@testing-library/react**  
 
