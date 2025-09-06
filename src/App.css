@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 30px 0 45px 0;
   background-color: white;
 }
 
@@ -24,7 +24,7 @@
 
 .app-main {
   box-shadow: 0px 10px 12px -5px rgba(0, 0, 0, .2);
-  z-index: 15;
+  z-index: 1;
   position: relative;
   margin: 0 auto;
 }
@@ -37,5 +37,5 @@
   right: 0;
   height: 20px;
   background-color: #f5f5f5;
-  z-index: 5;
+  z-index: 0;
 }
